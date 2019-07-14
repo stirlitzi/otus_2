@@ -51,5 +51,5 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    -sudo curl -T otus_2-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -u stirlitzi:$BINTRAY_API_KEY "https://api.bintray.com/content/test194/otus2_ipfilter/otus_2/$TRAVIS_BUILD_NUMBER/otus_2-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+    - curl -T otus_2-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -u stirlitzi:$BINTRAY_API_KEY "https://api.bintray.com/content/test194/otus2_ipfilter/otus_2/$TRAVIS_BUILD_NUMBER/otus_2-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
 
