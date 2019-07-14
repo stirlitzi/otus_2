@@ -33,6 +33,11 @@ script:
   - cmake --build . --target package
 
 before_script:
+  - sudo apt-get install -y libgtest-dev
+  - cd /usr/src/gtest
+  - sudo env "PATH=$PATH" cmake CMakeLists.txt
+  - sudo make
+  - sudo cp *.a /usr/lib
   - sudo apt-get install libboost-test-dev -y
   - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
   - echo ""
