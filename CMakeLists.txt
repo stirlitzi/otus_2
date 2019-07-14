@@ -10,9 +10,9 @@ set(CMAKE_CXX_STANDARD 17)
 #include_directories(lib/googletest-master/googlemock/include)
 
 add_executable(otus_2_cli main.cpp ip_filter.cpp ip_filter.h)
-add_executable(otus2_test ip_filter.cpp ip_filter.h gtest.cpp)
+#add_executable(otus2_test ip_filter.cpp ip_filter.h gtest.cpp)
 target_link_libraries(otus_2_cli gtest gtest_main)
-target_link_libraries(otus2_test gtest gtest_main)
+#target_link_libraries(otus2_test gtest gtest_main)
 
 set_target_properties(otus_2_cli PROPERTIES
         CXX_STANDARD 17
