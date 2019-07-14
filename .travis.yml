@@ -29,7 +29,7 @@ script:
   - qmake --version
   - cmake .
   - cmake --build .
-#  - cmake --build . --target test
+  - cmake --build . --target test
   - cmake --build . --target package
 
 before_script:
@@ -42,6 +42,11 @@ before_script:
   - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
   - echo ""
   - sudo apt-get update -qq
+#script:
+#  - cmake .
+#  - cmake --build .
+#    - cmake --build . --target test
+#  - cmake --build . --target package
 deploy:
   provider: script
   skip_cleanup: true
