@@ -17,9 +17,10 @@ int main(int argc, char const *argv[]) {
 
         // TODO reverse lexicographically sort
            {
-               stringstream ss;
-               ss = filter(ip_pool, 0, 0);
-               cout << ss.str();
+//               stringstream ss;
+//               ss = filter(ip_pool, 0, 0);
+               filter(ip_pool, 0, 0);
+//               cout << ss.str();
            }
 
         // 222.173.235.246
@@ -32,9 +33,10 @@ int main(int argc, char const *argv[]) {
 
         // TODO filter by first byte and output
            {
-               stringstream ss;
-               ss = filter(ip_pool, 1, 0);
-               cout << ss.str();
+//               stringstream ss;
+//               ss = filter(ip_pool, 1, 0);
+               filter(ip_pool, 1, 0);
+//               cout << ss.str();
            }
         // 1.231.69.33
         // 1.87.203.225
@@ -44,9 +46,10 @@ int main(int argc, char const *argv[]) {
 
         // TODO filter by first and second bytes and output
            {
-               stringstream ss;
-               ss = filter(ip_pool, 46, 70);
-               cout << ss.str();
+//               stringstream ss;
+//               ss = filter(ip_pool, 46, 70);
+//               cout << ss.str();
+               filter(ip_pool, 46, 70);
            }
         // 46.70.225.39
         // 46.70.147.26
@@ -55,9 +58,10 @@ int main(int argc, char const *argv[]) {
 
         // TODO filter by any byte and output
            {
-               stringstream ss;
-               ss = filter(ip_pool, 46, 0);
-               cout << ss.str();
+//               stringstream ss;
+//               ss = filter(ip_pool, 46, 0);
+//               cout << ss.str();
+               filter(ip_pool, 46, 0);
            }
 
 

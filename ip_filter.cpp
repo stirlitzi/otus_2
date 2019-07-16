@@ -46,6 +46,7 @@ bool operator<(const Ip &lhs, const Ip &rhs) {
 
 Ip SplitBy(string_view s, char sep) {
     vector<int> result;
+    result.reserve(4);
 //string_view result;
     while (!s.empty()) {
         size_t pos = s.find(sep);
@@ -58,7 +59,6 @@ Ip SplitBy(string_view s, char sep) {
 
 ostream &operator<<(ostream &os, const Ip &ip) {
     os << ip.first_oct << "." << ip.second_oct << "." << ip.third_oct << "." << ip.last_oct << endl;
-
     return os;
 }
 
@@ -68,24 +68,26 @@ stringstream filter(multiset<Ip> &ip_pool, int ip_find1, int ip_find2) {
     stringstream ss;
     if (ip_find1 == 0 && ip_find2 == 0) {
         for (auto it = ip_pool.rbegin(); it != ip_pool.rend(); ++it) {
-//            cout << *it;
-            ss << *it;
+            cout << *it;
+//            ss << *it << endl;
         }
         return ss;
     }
     auto it = ip_pool.rbegin();
     while ((it != ip_pool.rend())) {
         if (it->first_oct == ip_find1 && (ip_find1 == 1 && ip_find2 == 0)) {
-//            cout << *it;
-            ss << *it;
+                       cout << *it;
+//            ss << *it << endl;
         } else if (it->first_oct == 46 && it->second_oct == 70 && (ip_find1 == 46 && ip_find2 == 70)) {
             cout << *it;
-            ss << *it;
+//            ss << *it << endl;
         } else if ((it->first_oct == 46 || it->second_oct == 46 || it->third_oct == 46 || it->last_oct == 46) &&
                    (ip_find1 == 46 && ip_find2 == 0)) {
-//            cout << *it;
-            ss << *it;
+//            ss << *it << endl;
+
+            cout << *it;
         }
+
         ++it;
     }
     return ss;
